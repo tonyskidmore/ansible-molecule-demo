@@ -70,7 +70,7 @@ For more examples and ideas, visit:
 I will be running ansible and molecule in a Python virtual environment using [virtualenv](https://virtualenv.pypa.io/en/latest/).  This is what I used to get my environment configured ready to play with molecule:  
 ```
 sudo yum install -y epel-release
-sudo yum install -y gcc python-pip python-devel openssl-devel libselinux-python tree
+sudo yum install -y gcc python-pip python-devel openssl-devel libselinux-python tree git
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 mkdir ~/venv
