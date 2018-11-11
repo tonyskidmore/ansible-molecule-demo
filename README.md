@@ -130,7 +130,7 @@ As you can see the structure looks like you might expect for a typical ansible r
 
 To perform a test of our new blank skeleton role we can run `molecule test`.  This should pass through all of the test sequences without error (bearing in mind the role is not actually doing anything yet).  
 
-*Note*: When first running this command in my test environment I got an error on the task `TASK [Create Dockerfiles from image names]`.  If you get the same you can result then review the [Create Dockerfiles from image names](https://github.com/tonyskidmore/ansible-molecule-demo/wiki/Create-Dockerfiles-from-image-names) section from the Wiki of this repo.  
+*Note*: When first running this command in my test environment I got an error on the task `TASK [Create Dockerfiles from image names]`.  If you get the same result then review the [Create Dockerfiles from image names](https://github.com/tonyskidmore/ansible-molecule-demo/wiki/Create-Dockerfiles-from-image-names) section from the Wiki of this repo.  
 
 *Note*: After fixing the above issue I also encountered a 'Config' object has no attribute 'cache' error during the verifier stage.  If you encounter the same issue refer to ['Config' object has no attribute 'cache'](https://github.com/tonyskidmore/ansible-molecule-demo/wiki/'Config'-object-has-no-attribute-'cache') also from the Wiki of this repo.
 
