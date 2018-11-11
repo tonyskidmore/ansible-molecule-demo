@@ -14,6 +14,7 @@ Contents
 - [molecule init](#molecule-init)
 - [molecule test](#molecule-test)
 - [Basic Update](#basic-update)
+- [Travis CI](#travis-ci)
 
 ### Platform  
 For testing I will be using CentOS 7.5 patched to date (`sudo yum -y update`).  In my case this is running as a VM in VMware Workstation Pro 12.5 on my work laptop (not that should have any baring on what is described in this repo).
@@ -238,6 +239,12 @@ collected 2 items
     ========================== 2 passed in 21.75 seconds ===========================
 Verifier completed successfully.
 ```
+
+### Travis CI  
+
+[Travis CI](https://docs.travis-ci.com/) is a cloud based Continuous Integration product that allows for automated testing.  As detailed in the Jeff Geerling blog post [Testing your Ansible roles with Molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule) we can link Travis CI to our GitHub repo and get Travis CI to do test builds of our code on different platforms based on commits and/or on a schedule.  
+
+To enable this functionality we create the [.travis.yml](https://github.com/tonyskidmore/ansible-molecule-demo/blob/master/.travis.yml) file and enable the repo in our Travis account.  
 
 
 ### References
