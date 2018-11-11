@@ -1,5 +1,7 @@
 ## ansible-molecule-demo
 
+[![Build Status](https://travis-ci.org/tonyskidmore/ansible-molecule-demo.svg?branch=master)](https://travis-ci.org/tonyskidmore/ansible-molecule-demo)
+
 ### Introduction
 
 [molecule](https://github.com/ansible/molecule) is a project for testing Ansible roles.  It was announced in [September 2018](https://groups.google.com/forum/#!topic/ansible-project/ehrb6AEptzA) that molecule and [ansible-lint](https://github.com/ansible/ansible-lint) that upstream maintenance would be adopted into the ansible project.
