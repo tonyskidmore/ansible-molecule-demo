@@ -33,9 +33,10 @@ The last line adds my user account to the docker group so after I log back in ag
 
 To test all is ok I can logoff/logon using my account and test all is ok by running:  
 
+<pre>
+<b>docker run hello-world</b>
+</pre>
 ```
-docker run docker run hello-world
-
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 d1725b59e92d: Pull complete
