@@ -6,7 +6,7 @@
 
 [molecule](https://github.com/ansible/molecule) is a project for testing Ansible roles.  It was announced in [September 2018](https://groups.google.com/forum/#!topic/ansible-project/ehrb6AEptzA) that molecule and [ansible-lint](https://github.com/ansible/ansible-lint) would be adopted into the ansible project for upstream maintenance.  
 
-Myself and colleagues had looked at molecule in the past, especially after watching the [Infrastructure Testing with Molecule](https://www.ansible.com/infrastructure-testing-with-molecule) session at AnsibleFest 2017 by Elan Hashman shortly after the San Francisco event.  However, after some initialy testing I never really introduced it as a standard part of my Ansible role development process.  So now molecule has kind of got a more official stamp of approval this repo is aimed at capturing getting started (again) with the current versions.
+Myself and colleagues had looked at molecule in the past, especially after watching the [Infrastructure Testing with Molecule](https://www.ansible.com/infrastructure-testing-with-molecule) session at AnsibleFest 2017 by Elan Hashman shortly after the San Francisco event.  However, after some initial testing I never really introduced it as a standard part of my Ansible role development process.  So now molecule has kind of got a more official stamp of approval this repo is aimed at capturing getting started (again) with the current versions.
 
 Contents
 
