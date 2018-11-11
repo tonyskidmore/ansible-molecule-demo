@@ -5,3 +5,7 @@
   copy:
     dest: "{{ test_file }}"
     content: "{{ test_file_content }}"
+
+- name: debug linux distribution info message
+  debug:
+    msg: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
