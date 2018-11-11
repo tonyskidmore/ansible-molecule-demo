@@ -120,6 +120,8 @@ We can view the created structure using the `tree` command:
 
 As you can see the structure looks like you might expect for a typical ansible role with the addition of the molecule directory.  
 
+*Note*: The contents of this repo have this structure at the repo root i.e. the repo is a molecule enabled ansible role  
+
 ### molecule test
 
 To perform a test of our new blank skeleton role we can run `molecule test`.  This should pass through all of the test sequences without error (bearing in mind the role is not actually doing anything yet).  
