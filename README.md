@@ -260,6 +260,10 @@ env:
 We should have our ansible-molecule-demo role built and tested under CentOS 7 and Ubuntu 18.04 and we can review the build at [tonyskidmore / ansible-molecule-demo
 ](https://travis-ci.org/tonyskidmore/ansible-molecule-demo).  
 
+If we add the below to our repo [README.md](https://raw.githubusercontent.com/tonyskidmore/ansible-molecule-demo/master/README.md) we will get a nice build badge at the top of our documentation.  
+```
+[![Build Status](https://travis-ci.org/tonyskidmore/ansible-molecule-demo.svg?branch=master)](https://travis-ci.org/tonyskidmore/ansible-molecule-demo)
+```
 
 ### References
 [molecule](https://github.com/ansible/molecule)  
