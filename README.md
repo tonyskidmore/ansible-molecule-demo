@@ -19,7 +19,7 @@ Contents
 - [Travis CI](#travis-ci)
 
 ### Platform  
-For testing I will be using CentOS 7.5 patched to date (`sudo yum -y update`).  In my case this is running as a VM in VMware Workstation Pro 12.5 on my work laptop (not that should have any baring on what is described in this repo).
+For testing I will be using CentOS 7.5 patched to date (`sudo yum -y update`).  In my case this is running as a VM in VMware Workstation Pro 12.5 on my work laptop (not that should have any bearing on what is described in this repo).
 
 ### Docker  
 Initially I will be working with the [Docker driver](https://molecule.readthedocs.io/en/latest/configuration.html#docker).  So the first steps are to get [Docker CE](https://www.docker.com/products/docker-engine) installed on my CentOS Linux installation and running at startup:  
