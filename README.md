@@ -130,6 +130,13 @@ To perform a test of our new blank skeleton role we can run `molecule test`.  Th
 
 *Note*: After fixing the above issue I also encountered a 'Config' object has no attribute 'cache' error during the verifier stage.  If you encounter the same issue refer to ['Config' object has no attribute 'cache'](https://github.com/tonyskidmore/ansible-molecule-demo/wiki/'Config'-object-has-no-attribute-'cache') also from the Wiki of this repo.
 
+### molecule configuration  
+
+When initializing a molecule enabled repo with `molecule init` a default configuration is created in the `molecule/default/molecule.yml` file.  Reading the blog article by Jeff Geerling [Testing your Ansible roles with Molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule) you will discover that you can use pre-built Docker images and he provides a set of these images for various Linux distributions.  If you review the [molecule.yml](https://github.com/tonyskidmore/ansible-molecule-demo/blob/master/molecule/default/molecule.yml) file in this repo you will see that we have taken this approach and also commented out some of the sequences that are skipped by default.  
+
+
+
+
 
 
 ### References
