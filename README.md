@@ -248,6 +248,18 @@ Verifier completed successfully.
 
 To enable this functionality we create the [.travis.yml](https://github.com/tonyskidmore/ansible-molecule-demo/blob/master/.travis.yml) file and enable the repo in our Travis account.  
 
+Because we have molecule enabled our travis-ci configuration in the `.travis.yml` file and specified:  
+```
+env:
+  global:
+    - ROLE_NAME: ansible-module-demo
+  matrix:
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: ubuntu1804
+```
+We should have our ansible-molecule-demo role built and tested under CentOS 7 and Ubuntu 18.04 and we can review the build at [tonyskidmore / ansible-molecule-demo
+](https://travis-ci.org/tonyskidmore/ansible-molecule-demo).  
+
 
 ### References
 [molecule](https://github.com/ansible/molecule)  
