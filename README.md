@@ -137,14 +137,107 @@ When initializing a molecule enabled repo with `molecule init` a default configu
 
 ### Basic Update  
 
-Ok so we have a blank role but is doesn't do anything.  So we are going to make a very basic update to add some functionality to our demo role.  If you want to follow along you can try following the steps below after reviewing all of the above sections to make sure you have a similar environment and are aware of some of the issues you might hit:  
+Ok so we have a blank role but is doesn't do anything.  So we are going to make a very basic update with a TDD approach to add some functionality to our demo role.  If you want to follow along you can try following the steps below after reviewing all of the above sections to make sure you have a similar environment and are aware of some of the issues you might hit:  
 
+```
+git clone https://github.com/tonyskidmore/ansible-molecule-demo.git
+cd ansible-molecule-demo/
+git checkout test
+```
+
+We now have a version of ansible-molecule-demo without the updates to the role.  So the first thing we will do is add the test for our role requirements.  We want a file called `/tmp/test` to exist with the content of `ansible-molecule-demo`.  Update the `molecule/default/tests/test_default.py` to add an additional test to test our required functionality:  
+
+```
+import os
+
+import testinfra.utils.ansible_runner
+
+testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
+    os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
+
+
+def test_hosts_file(host):
+    f = host.file('/etc/hosts')
+
+    assert f.exists
+    assert f.user == 'root'
+    assert f.group == 'root'
+
+
+def test_test_file(host):
+    f = host.file('/tmp/test')
+
+    assert f.exists
+
+    content = f.content
+    assert b'ansible-molecule-demo' in content
+```
+
+Now if we run `molecule test` now we will get the following error during the verify task because the file does not exist:  
+```
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Executing Testinfra tests found in /home/tony/ansible/ansible-molecule-demo/molecule/default/tests/...
+    ============================= test session starts ==============================
+    platform linux2 -- Python 2.7.5, pytest-3.10.0, py-1.7.0, pluggy-0.8.0
+    rootdir: /home/tony/ansible/ansible-molecule-demo/molecule/default, inifile: pytest.ini
+    plugins: testinfra-1.16.0
+collected 2 items
+
+    tests/test_default.py .F                                                 [100%]
+
+    =================================== FAILURES ===================================
+    ______________________ test_test_file[ansible://instance] ______________________
+
+    host = <testinfra.host.Host object at 0x7f604ea22c90>
+
+        def test_test_file(host):
+            f = host.file('/tmp/test')
+
+    >       assert f.exists
+    E       assert False
+    E        +  where False = <file /tmp/test>.exists
+
+    tests/test_default.py:20: AssertionError
+    ===================== 1 failed, 1 passed in 20.06 seconds ======================
+An error occurred during the test sequence action: 'verify'. Cleaning up.
+```
+
+We will update `defaults/main.yml` and `tasks/main.yml` with the below content:  
+```
+---
+# defaults file for ansible-molecule-demo
+test_file: /tmp/test
+test_file_content: "ansible-molecule-demo"
 ```
 
 ```
+---
+# tasks file for ansible-molecule-demo
 
+- name: create test file with contents
+  copy:
+    path: "{{ test_file }}"
+    content: "{{ test_file_content }}"
+```
 
+Now if we run `molecule test` we should have made the test pass because of the functionality we added to our role:  
 
+```
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Executing Testinfra tests found in /home/tony/ansible/ansible-molecule-demo/molecule/default/tests/...
+    ============================= test session starts ==============================
+    platform linux2 -- Python 2.7.5, pytest-3.10.0, py-1.7.0, pluggy-0.8.0
+    rootdir: /home/tony/ansible/ansible-molecule-demo/molecule/default, inifile: pytest.ini
+    plugins: testinfra-1.16.0
+collected 2 items
+
+    tests/test_default.py ..                                                 [100%]
+
+    ========================== 2 passed in 21.75 seconds ===========================
+Verifier completed successfully.
+```
 
 
 ### References
