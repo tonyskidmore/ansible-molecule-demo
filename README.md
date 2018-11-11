@@ -222,6 +222,11 @@ test_file_content: "ansible-molecule-demo"
   copy:
     path: "{{ test_file }}"
     content: "{{ test_file_content }}"
+
+- name: debug linux distribution info message
+  debug:
+    msg: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+
 ```
 
 Now if we run `molecule test` we should have made the test pass because of the functionality we added to our role:  
