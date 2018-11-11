@@ -13,6 +13,7 @@ Contents
 - [Environment](#environment)
 - [molecule init](#molecule-init)
 - [molecule test](#molecule-test)
+- [Basic Update](#basic-update)
 
 ### Platform  
 For testing I will be using CentOS 7.5 patched to date (`sudo yum -y update`).  In my case this is running as a VM in VMware Workstation Pro 12.5 on my work laptop (not that should have any baring on what is described in this repo).
@@ -134,6 +135,13 @@ To perform a test of our new blank skeleton role we can run `molecule test`.  Th
 
 When initializing a molecule enabled repo with `molecule init` a default configuration is created in the `molecule/default/molecule.yml` file.  Reading the blog article by Jeff Geerling [Testing your Ansible roles with Molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule) you will discover that you can use pre-built Docker images and he provides a set of these images for various Linux distributions.  If you review the [molecule.yml](https://github.com/tonyskidmore/ansible-molecule-demo/blob/master/molecule/default/molecule.yml) file in this repo you will see that we have taken this approach and also commented out some of the sequences that are skipped by default.  
 
+### Basic Update  
+
+Ok so we have a blank role but is doesn't do anything.  So we are going to make a very basic update to add some functionality to our demo role.  If you want to follow along you can try following the steps below after reviewing all of the above sections to make sure you have a similar environment and are aware of some of the issues you might hit:  
+
+```
+
+```
 
 
 

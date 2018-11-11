@@ -1,2 +1,7 @@
 ---
 # tasks file for ansible-molecule-demo
+
+- name: create test file with contents
+  copy:
+    dest: "{{ test_file }}"
+    content: "{{ test_file_content }}"

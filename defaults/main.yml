@@ -1,2 +1,4 @@
 ---
 # defaults file for ansible-molecule-demo
+test_file: /tmp/test
+test_file_content: "ansible-molecule-demo"

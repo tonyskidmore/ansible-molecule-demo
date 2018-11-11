@@ -1,9 +1,8 @@
 ---
 galaxy_info:
   author: Tony Skidmore
-  description: ansible molecule demo 
+  description: ansible molecule demo
   license: MIT
-
   platforms:
     - name: EL
       versions:
@@ -17,5 +16,4 @@ galaxy_info:
         - precise
         - trusty
         - xenial
-
   galaxy_tags: []
