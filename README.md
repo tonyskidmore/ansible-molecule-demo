@@ -11,7 +11,8 @@ Contents
 - [Platform](#platform)
 - [Docker](#docker)
 - [Environment](#environment)
-- [Molecule Init](#molecule-init)
+- [molecule init](#molecule-init)
+- [molecule test](#molecule-test)
 
 ### Platform  
 For testing I will be using CentOS 7.5 patched to date (`sudo yum -y update`).  In my case this is running as a VM in VMware Workstation Pro 12.5 on my work laptop (not that should have any baring on what is described in this repo).
@@ -80,7 +81,7 @@ pip install molecule
 pip install docker-py
 ```
 
-### Molecule Init
+### molecule init
 
 So now we have created a virtualenv for using molecule we can create a new ansible role to test with.  The commands below will activate the virtualenv and create a new molecule enabled ansible role template:  
 
@@ -117,6 +118,8 @@ We can view the created structure using the `tree` command:
 ```
 
 As you can see the structure looks like you might expect for a typical ansible role with the addition of the molecule directory.  
+
+### molecule test
 
 To perform a test of our new blank skeleton role we can run `molecule test`.  This should pass through all of the test sequences without error (bearing in mind the role is not actually doing anything yet).  
 
